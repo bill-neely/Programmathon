@@ -1,0 +1,57 @@
+<%= form_for(@image) do |f| %>
+  <% if @image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul>
+      <% @image.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :invoice %><br>
+    <%= f.number_field :invoice %>
+  </div>
+  <div class="field">
+    <%= f.label :invoicedate %><br>
+    <%= f.date_select :invoicedate %>
+  </div>
+  <div class="field">
+    <%= f.label :route %><br>
+    <%= f.number_field :route %>
+  </div>
+  <div class="field">
+    <%= f.label :customer %><br>
+    <%= f.number_field :customer %>
+  </div>
+  <div class="field">
+    <%= f.label :customername %><br>
+    <%= f.text_field :customername %>
+  </div>
+  <div class="field">
+    <%= f.label :chain %><br>
+    <%= f.number_field :chain %>
+  </div>
+  <div class="field">
+    <%= f.label :chainname %><br>
+    <%= f.text_field :chainname %>
+  </div>
+  <div class="field">
+    <%= f.label :sales %><br>
+    <%= f.number_field :sales %>
+  </div>
+  <div class="field">
+    <%= f.label :salesname %><br>
+    <%= f.text_field :salesname %>
+  </div>
+  <div class="field">
+    <%= f.label :imageurl %><br>
+    <%= f.text_field :imageurl %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

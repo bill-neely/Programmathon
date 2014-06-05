@@ -1,0 +1,56 @@
+<h1>Locate your image</h1>
+
+<table class="table table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Find Invoice<th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="table table-bordered table-condensed table-hover">
+  <thead>
+    <tr>
+      <th>Invoice</th>
+      <th>Invoicedate</th>
+      <th>Route</th>
+      <th>Customer</th>
+      <th>Customername</th>
+      <th>Chain</th>
+      <th>Chainname</th>
+      <th>Sales</th>
+      <th>Salesname</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @images.each do |image| %>
+      <tr>
+        <td><%= image.invoice %></td>
+        <td><%= image.invoicedate %></td>
+        <td><%= image.route %></td>
+        <td><%= image.customer %></td>
+        <td><%= image.customername %></td>
+        <td><%= image.chain %></td>
+        <td><%= image.chainname %></td>
+        <td><%= image.sales %></td>
+        <td><%= image.salesname %></td>
+        <td>
+          <%= link_to 'View Image', image.imageurl, target: "_blankl", class: "btn btn-sm btn-info"  %>
+          &nbsp&nbsp<%= link_to 'x', image, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Image', new_image_path %>

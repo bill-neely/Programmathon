@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Invoice:</strong>
+  <%= @image.invoice %>
+</p>
+
+<p>
+  <strong>Invoicedate:</strong>
+  <%= @image.invoicedate %>
+</p>
+
+<p>
+  <strong>Route:</strong>
+  <%= @image.route %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @image.customer %>
+</p>
+
+<p>
+  <strong>Customername:</strong>
+  <%= @image.customername %>
+</p>
+
+<p>
+  <strong>Chain:</strong>
+  <%= @image.chain %>
+</p>
+
+<p>
+  <strong>Chainname:</strong>
+  <%= @image.chainname %>
+</p>
+
+<p>
+  <strong>Sales:</strong>
+  <%= @image.sales %>
+</p>
+
+<p>
+  <strong>Salesname:</strong>
+  <%= @image.salesname %>
+</p>
+
+<p>
+  <strong>Imageurl:</strong>
+  <%= @image.imageurl %>
+</p>
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>
