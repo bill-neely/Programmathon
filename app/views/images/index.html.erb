@@ -1,14 +1,29 @@
 <h1>Locate your image</h1>
 
 <table class="table table-bordered table-condensed">
-  <thead>
-    <tr>
-      <th>Find Invoice<th>
-      </tr>
-  </thead>
   <tbody>
     <tr>
       <td>
+        <%= form_tag("/", method: "get") do %>
+        <%= label_tag(:qinvc, "By Invoice:") %>
+        <%= text_field_tag(:qinvc) %>
+        <%= submit_tag("Search") %>
+        <% end %>
+      </td>
+      <td>
+        <%= form_tag("/", method: "get") do %>
+        <%= label_tag(:qroute, "By Route:") %>
+        <%= text_field_tag(:qroute) %>
+        <%= submit_tag("Search") %>
+        <% end %>
+      </td>
+       <td>
+        <%= form_tag("/", method: "get") do %>
+        <%= label_tag(:chain, "By Chain:") %>
+        <%= text_field_tag(:qchain) %>
+        <%= submit_tag("Search") %>
+        <% end %>
+      </td>
     </tr>
   </tbody>
 </table>

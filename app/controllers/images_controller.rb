@@ -5,7 +5,17 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @images = Image.all
+    if params[:qroute].present? then
+      @images = Image.where("route = " + params[:qroute])
+    elsif params[:qinvc].present? then
+      @images = Image.where("invoice = " + params[:qinvc])
+    elsif params[:qchain].present? then
+      @images = Image.where("chain = " + params[:qchain])
+    else
+      @images = Image.all
+    end
+
+    #@images = Image.findby(route: 888)
   end
 
   # GET /images/1
